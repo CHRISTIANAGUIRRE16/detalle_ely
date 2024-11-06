@@ -11,9 +11,13 @@ let currentMessage = 0;
 
 function showMessage(index) {
     const boxContainer = document.getElementById("boxContainer");
+    const finalSurprise = document.getElementById("finalSurprise");
 
     // Oculta la caja anterior
     boxContainer.innerHTML = "";
+
+    // Asegúrate de que el finalSurprise esté oculto inicialmente
+    finalSurprise.classList.add("hidden");
 
     if (index < messages.length) {
         // Muestra el mensaje actual
@@ -26,13 +30,19 @@ function showMessage(index) {
         const nextBox = document.createElement("button");
         nextBox.textContent = "Abrir Caja 🎁";
         nextBox.classList.add("box");
-        nextBox.onclick = function() {
+
+        // Agregamos el evento para abrir la siguiente caja
+        nextBox.addEventListener("click", function() {
             showMessage(index + 1);
-        };
+        });
+
+        nextBox.addEventListener("touchstart", function() {
+            showMessage(index + 1);
+        });
+
         boxContainer.appendChild(nextBox);
     } else {
-        // Al último mensaje, muestra la sorpresa final
-        const finalSurprise = document.getElementById("finalSurprise");
+        // Cuando llegamos al final, muestra la sorpresa final
         finalSurprise.classList.remove("hidden");
     }
 }
