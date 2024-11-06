@@ -9,13 +9,13 @@
 <body>
     <div class="container">
         <h1>Hola, mi amor 💖</h1>
-        <p>Eres la persona más especial en mi vida y quiero recordarte lo mucho que significas para mí. 💕</p>
-        <button id="revealButton">Haz clic aquí para ver una sorpresa 🎁</button>
-        
-        <!-- Mensaje sorpresa -->
-        <div id="surprise" class="hidden">
-            <p>Gracias por estar a mi lado siempre. Te amo más de lo que las palabras pueden expresar. ❤️</p>
+        <p>Prepárate para abrir una sorpresa tras otra... ¡Haz clic en cada caja! 🎁</p>
+        <div id="boxContainer">
+            <button class="box" onclick="showMessage(0)">Abrir Caja 🎁</button>
+        </div>
+        <div id="finalSurprise" class="hidden">
             <img src="sorpresa.jpg" alt="Sorpresa" class="surprise-image">
+            <p>¡Gracias por llegar hasta aquí! Te amo ❤️</p>
         </div>
     </div>
 
